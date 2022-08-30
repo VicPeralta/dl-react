@@ -10,7 +10,7 @@ import {
 } from './counterSlice';
 import styles from './Counter.module.css';
 
-export function Counter() {
+export default function Counter() {
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
   const [incrementAmount, setIncrementAmount] = useState('2');
@@ -23,6 +23,7 @@ export function Counter() {
         <button
           className={styles.button}
           aria-label="Decrement value"
+          type="button"
           onClick={() => dispatch(decrement())}
         >
           -
@@ -31,6 +32,7 @@ export function Counter() {
         <button
           className={styles.button}
           aria-label="Increment value"
+          type="button"
           onClick={() => dispatch(increment())}
         >
           +
@@ -45,18 +47,21 @@ export function Counter() {
         />
         <button
           className={styles.button}
+          type="button"
           onClick={() => dispatch(incrementByAmount(incrementValue))}
         >
           Add Amount
         </button>
         <button
           className={styles.asyncButton}
+          type="button"
           onClick={() => dispatch(incrementAsync(incrementValue))}
         >
           Add Async
         </button>
         <button
           className={styles.button}
+          type="button"
           onClick={() => dispatch(incrementIfOdd(incrementValue))}
         >
           Add If Odd
