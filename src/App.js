@@ -11,7 +11,9 @@ function App() {
         <Counter />
         <p>
           Edit
+          <span> </span>
           <code>src/App.js</code>
+          <span> </span>
           and save to reload.
         </p>
         <span>
