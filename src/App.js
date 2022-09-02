@@ -1,63 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import Counter from './features/counter/Counter';
+import { Route, Routes } from 'react-router-dom';
+import NavBar from './components/navbar/navbar';
+import StudentPage from './pages/students';
+import CoursesPage from './pages/courses';
+import GradesPage from './pages/grades';
+import MaintenancePage from './pages/maintenance';
 import './App.css';
-import Greeting from './features/greeting/greeting';
 
 function App() {
   return (
     <div className="App">
-      <Greeting />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit
-          <span> </span>
-          <code>src/App.js</code>
-          <span> </span>
-          and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,
-          <span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
+      <header>
+        <NavBar />
       </header>
+      <Routes>
+        <Route path="/" element={<StudentPage />} />
+        <Route path="/courses" element={<CoursesPage />} />
+        <Route path="/grades" element={<GradesPage />} />
+        <Route path="/maintenance" element={<MaintenancePage />} />
+      </Routes>
     </div>
   );
 }
