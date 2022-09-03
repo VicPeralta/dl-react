@@ -1,14 +1,14 @@
 
 .flex {
-  display:flex;
+  display: flex;
 }
 
 .flex-1 {
-  flex:1;
+  flex: 1;
 }
 
 .flex-2 {
-  flex:2;
+  flex: 2;
 }
 
 .align-center {
@@ -35,6 +35,9 @@
   font-size: 1.2rem;
 }
 
+.bk-white {
+  background-color: white;
+}
 
 .border-gray {
   border: 1px solid gray;
@@ -56,8 +59,24 @@
   width: 100%;
 }
 
+.w-80 {
+  width: 80%;
+}
+
 .w-30 {
   width: 30%;
+}
+
+.w-90vw {
+  width: 90vw;
+}
+
+.h-80 {
+  height: 80%;
+}
+
+.h-80vh {
+  height: 80vh;
 }
 
 .container {

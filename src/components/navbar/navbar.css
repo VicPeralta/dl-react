@@ -15,7 +15,7 @@ nav img {
 
 .navlinks {
   gap: 8px;
-  align-items: space-between;
+  align-items: center;
 }
 
 .navlinks a {
