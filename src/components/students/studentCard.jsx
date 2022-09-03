@@ -1,36 +1,33 @@
 import PropTypes from 'prop-types';
-import { createElement } from 'react';
+import Popup from 'reactjs-popup';
+import Grades from '../grades/grades';
 
-const h1 = () => (<h1>Hello</h1>);
-
-const StudentCard = ({ id, name }) => {
-  const onCourses = (e) => {
-    const body = document.querySelector('body');
-    const child = createElement(h1);
-    body.appendChild(child);
-    console.log(e.target.dataset.id);
-  };
-  return (
-    <div className="flex border-gray p-1 w-100 align-items">
-      <p className="flex-1">
-        {id}
-      </p>
-      <p className="flex-2">
-        {name}
-      </p>
-      <div className="flex-1">
-        <button
-          type="button"
-          className="p-1"
-          data-id={id}
-          onClick={onCourses}
-        >
-          See courses
-        </button>
-      </div>
+const StudentCard = ({ id, name }) => (
+  <div className="flex border-gray p-1 w-100 align-items">
+    <p className="flex-1">
+      {id}
+    </p>
+    <p className="flex-2">
+      {name}
+    </p>
+    <div className="flex-1">
+      <Popup
+        trigger={<button type="button"> See courses </button>}
+        modal
+        nested
+      >
+        {(close) => (
+          <div className="modal bk-white h-80vh w-90vw">
+            <button className="close" onClick={close} type="button">
+              &times;
+            </button>
+            <Grades type="student" id={id} />
+          </div>
+        )}
+      </Popup>
     </div>
-  );
-};
+  </div>
+);
 
 StudentCard.propTypes = {
   id: PropTypes.string.isRequired,
