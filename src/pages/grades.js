@@ -1,3 +1,5 @@
-const GradesPage = () => (<h1>Hello Grades</h1>);
+import Grades from '../components/grades/grades';
+
+const GradesPage = () => (<Grades type="all" />);
 
 export default GradesPage;

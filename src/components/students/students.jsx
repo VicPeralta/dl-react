@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import StudentList from './studentList';
 import getStudentsList from '../../services/getStudents';
+import Message from '../utilities/message';
 
 const Students = () => {
   const studentsList = useSelector((state) => (state.students.students));
@@ -14,10 +15,10 @@ const Students = () => {
         <StudentList students={studentsList} />
       )}
       {!fetching && studentsList.length === 0 && (
-        <h3>Something went wrong while fetching the data.</h3>
+        <Message message="There is no information available" />
       )}
       {fetching && (
-        <h3>Fetching data please wait...</h3>
+        <Message message="Fetching data please wait" />
       )}
     </>
   );

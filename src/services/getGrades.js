@@ -2,10 +2,21 @@ import { getGradesBegin, getGradesSuccess, getGradesFailure } from '../app/grade
 
 const STUDENT_URL = 'http://127.0.0.1:3001/grades/student/';
 const COURSE_URL = 'http://127.0.0.1:3001/grades/course/';
+const ALL_URL = 'http://127.0.0.1:3001/grades';
 
 function getGradesList(type, id) {
   return async (dispatch) => {
-    const url = type === 'student' ? `${STUDENT_URL}${id}` : `${COURSE_URL}/${id}`;
+    let url = '';
+    switch (type) {
+      case 'student':
+        url = `${STUDENT_URL}${id}`;
+        break;
+      case 'courses':
+        url = `${COURSE_URL}/${id}`;
+        break;
+      default:
+        url = ALL_URL;
+    }
     dispatch(getGradesBegin());
     try {
       const response = await fetch(url);

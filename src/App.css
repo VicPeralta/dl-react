@@ -23,13 +23,18 @@
   margin: 0;
 }
 
+.font-size-2 {
+  font-size: 2rem;
+}
+
+.font-size-3 {
+  font-size: 3rem;
+}
+
 .font-size-4 {
   font-size: 4rem;
 }
 
-.font-size-2 {
-  font-size: 2rem;
-}
 
 .font-size-12 {
   font-size: 1.2rem;
@@ -39,12 +44,36 @@
   background-color: white;
 }
 
+.shadow-1 {
+  box-shadow: 0px 12px 5px -4px rgba(3,3,3,0.48);
+  -webkit-box-shadow: 0px 12px 5px -4px rgba(3,3,3,0.48);
+  -moz-box-shadow: 0px 12px 5px -4px rgba(3,3,3,0.48);
+}
+
+.shadow-2 {
+  box-shadow: 0px 1px 5px 28px rgba(3,3,3,0.52);
+  -webkit-box-shadow: 0px 1px 5px 28px rgba(3,3,3,0.52);
+  -moz-box-shadow: 0px 1px 5px 28px rgba(3,3,3,0.52);
+}
+
 .border-gray {
   border: 1px solid gray;
 }
 
 .p-1 {
   padding: 10px;
+}
+
+.m-1 {
+  margin: 10px;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.m-t-4-auto {
+  margin: 40px auto;
 }
 
 .px-1 {
@@ -80,6 +109,26 @@
 }
 
 .container {
-  width: 80%;
+  width: 90%;
   margin-inline: auto;
+}
+
+.scroll {
+  overflow-y: auto;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.btn {
+  border-radius: 8px;
+  border: none;
+  padding: 10px;
+  background-color: dodgerblue;
+  color: white;
+}
+
+.btn:hover {
+  cursor: pointer;
 }

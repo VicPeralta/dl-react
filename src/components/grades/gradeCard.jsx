@@ -1,36 +1,64 @@
 import PropTypes from 'prop-types';
 
-const GradeCard = ({
-  studentId, courseId, q1, q2, q3, q4,
-}) => (
-  <div className="flex border-gray p-1 w-100 align-items">
+const GradeCard = ({ grade, type }) => (
+  <div className="flex border-gray p-1 w-100 align-items m-1">
     <p className="flex-1">
-      {studentId}
+      {type !== 'student' ? grade.student_id : grade.course_id}
+    </p>
+    {type === 'all'
+      ? (
+        <p className="flex-1">
+          {grade.course_id}
+        </p>
+      ) : ''}
+    {type !== 'all'
+      ? (
+        <p className="flex-1">
+          {grade.name}
+        </p>
+      ) : ''}
+    <p className="flex-1">
+      {grade.q1}
+      <span> - </span>
+      {grade.rq1}
     </p>
     <p className="flex-1">
-      {courseId}
+      {grade.q2}
+      <span> - </span>
+      {grade.rq2}
     </p>
     <p className="flex-1">
-      {q1 || 'N/A'}
+      {grade.q3}
+      <span> - </span>
+      {grade.rq3}
     </p>
     <p className="flex-1">
-      {q2 || 'N/A'}
+      {grade.q4}
+      <span> - </span>
+      {grade.rq4}
     </p>
     <p className="flex-1">
-      {q3 || 'N/A'}
-    </p>
-    <p className="flex-1">
-      {q4 || 'N/A'}
+      {grade.rf}
     </p>
   </div>
 );
 
 GradeCard.propTypes = {
-  studentId: PropTypes.string.isRequired,
-  courseId: PropTypes.string.isRequired,
-  q1: PropTypes.string.isRequired,
-  q2: PropTypes.string.isRequired,
-  q3: PropTypes.string.isRequired,
-  q4: PropTypes.string.isRequired,
+  grade: PropTypes.arrayOf(PropTypes.shape({
+    student_id: PropTypes.string.isRequired,
+    course_id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    q1: PropTypes.number,
+    q2: PropTypes.number,
+    q3: PropTypes.number,
+    q4: PropTypes.number,
+    rq1: PropTypes.string.isRequired,
+    rq2: PropTypes.string.isRequired,
+    rq3: PropTypes.string.isRequired,
+    rq4: PropTypes.string.isRequired,
+    rf: PropTypes.string.isRequired,
+  })).isRequired,
+  name: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
 };
 export default GradeCard;
