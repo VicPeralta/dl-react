@@ -51,6 +51,11 @@ const Form = ({ url, title }) => {
   };
   return (
     <>
+      <h1 className="text-centered">
+        Adding a
+        <span>  </span>
+        {title}
+      </h1>
       <form onSubmit={onSubmit} className="flex column m-t-4-auto w-30">
         <div className="field">
           <label htmlFor="Id">
