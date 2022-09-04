@@ -1,3 +1,5 @@
-const MaintenancePage = () => (<h1>Hello Maintenance</h1>);
+import FormStudent from '../components/forms/FormStudent';
+
+const MaintenancePage = () => (<FormStudent />);
 
 export default MaintenancePage;
