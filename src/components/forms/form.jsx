@@ -1,20 +1,21 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import MessageBadge from '../utilities/messageBadge';
 
-const FormStudent = () => {
-  const [studentId, setStudentId] = useState('');
-  const [studentName, setStudentName] = useState('');
+const Form = ({ url, title }) => {
+  const [id, setId] = useState('');
+  const [name, setName] = useState('');
   const [message, setMessage] = useState('');
   const [type, setType] = useState('info');
   const onChangeId = (e) => {
-    setStudentId(() => (e.target.value));
+    setId(() => (e.target.value));
   };
   const onChangeName = (e) => {
-    setStudentName(() => (e.target.value));
+    setName(() => (e.target.value));
   };
-  const showError = () => {
+  const showError = (message) => {
     setType('error');
-    setMessage('Somenting went wrong ');
+    setMessage(message);
     setTimeout(() => {
       setMessage('');
     }, 2000);
@@ -28,36 +29,36 @@ const FormStudent = () => {
   };
   const onSubmit = async (e) => {
     e.preventDefault();
-    const url = 'http://127.0.0.1:3001/students/';
+    // const url = 'http://127.0.0.1:3001/students/';
     try {
       const response = await fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: `{"id":"${studentId}","name":"${studentName}"}`,
+        body: `{"id":"${id}","name":"${name}"}`,
       });
-      if (response.status !== 201) {
-        showError();
+      if (response.status === 422) {
+        showError('ID is already taken');
       } else {
-        showInfo('Student added successfully');
+        showInfo('Added successfully');
       }
-      setStudentId('');
-      setStudentName('');
+      setId('');
+      setName('');
     } catch (e) {
-      showError();
+      showError('Something went wrong');
     }
   };
   return (
     <>
-      <form onSubmit={onSubmit} className="flex column container">
+      <form onSubmit={onSubmit} className="flex column m-t-4-auto w-30">
         <div className="field">
-          <label htmlFor="studentId">
-            Student-Id:
+          <label htmlFor="Id">
+            {`${title}-Id:`}
             <input
-              id="studentId"
+              id="Id"
               type="text"
-              value={studentId}
+              value={id}
               onChange={onChangeId}
               maxLength="10"
               minLength="3"
@@ -66,12 +67,12 @@ const FormStudent = () => {
           </label>
         </div>
         <div className="field">
-          <label htmlFor="student">
+          <label htmlFor="name">
             Name:
             <input
-              id="student"
+              id="name"
               type="text"
-              value={studentName}
+              value={name}
               onChange={onChangeName}
               maxLength="50"
               minLength="3"
@@ -86,4 +87,8 @@ const FormStudent = () => {
   );
 };
 
-export default FormStudent;
+Form.propTypes = {
+  url: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
+export default Form;
