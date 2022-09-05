@@ -7,14 +7,17 @@ import MessageBadge from '../utilities/messageBadge';
 const Enroll = () => {
   const studentsList = useSelector((state) => (state.students.students));
   const coursesList = useSelector((state) => (state.courses.courses));
+  const token = useSelector((state) => (state.user.token));
   const [student, setStudent] = useState('');
   const [course, setCourse] = useState('');
   const [type, setType] = useState('info');
   const [message, setMessage] = useState('');
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getCoursesList());
-    dispatch(getStudentsList());
+    dispatch(getCoursesList(token));
+    dispatch(getStudentsList(token));
+    if (studentsList.length > 0) setStudent(studentsList[0].id);
+    if (coursesList.length > 0) setCourse(coursesList[0].id);
   }, []);
   const showError = (message) => {
     setType('error');
@@ -38,6 +41,7 @@ const Enroll = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
         },
         body: `{"student_id":"${student}","course_id":"${course}"}`,
       });
@@ -87,8 +91,8 @@ const Enroll = () => {
               }
             </select>
           </label>
-          <input type="submit" value="Enroll" className="btn" />
         </div>
+        <input type="submit" value="Enroll" className="btn" />
       </form>
       <MessageBadge message={message} type={type} />
     </>

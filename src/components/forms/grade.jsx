@@ -7,17 +7,22 @@ import MessageBadge from '../utilities/messageBadge';
 const GradeForm = () => {
   const studentsList = useSelector((state) => (state.students.students));
   const coursesStudent = useSelector((state) => (state.grades.grades));
+  const token = useSelector((state) => (state.user.token));
   const [student, setStudent] = useState('');
   const [course, setCourse] = useState('');
   const [type, setType] = useState('info');
   const [message, setMessage] = useState('');
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getStudentsList());
+    dispatch(getStudentsList(token));
+    setStudent(studentsList[0]?.id);
   }, []);
   useEffect(() => {
-    dispatch(getGradesList('student', student));
+    dispatch(getGradesList('student', student, token));
   }, [student]);
+  useEffect(() => {
+    if (coursesStudent.length > 0) setCourse(coursesStudent[0]);
+  }, [coursesStudent]);
   const showError = (message) => {
     setType('error');
     setMessage(message);
@@ -52,6 +57,7 @@ const GradeForm = () => {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
         },
         body: `{
         ${jsonQ1}
@@ -126,8 +132,8 @@ const GradeForm = () => {
             Q4
             <input type="number" id="q4" min={0} max={10} value={course?.q4 || ''} onChange={onQuarter} />
           </label>
-          <input type="submit" value="Update grades" className="btn" />
         </div>
+        <input type="submit" value="Update grades" className="btn" />
       </form>
       <MessageBadge message={message} type={type} />
     </>

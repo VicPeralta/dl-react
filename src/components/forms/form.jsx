@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import MessageBadge from '../utilities/messageBadge';
 
 const Form = ({ url, title }) => {
@@ -7,6 +8,7 @@ const Form = ({ url, title }) => {
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
   const [type, setType] = useState('info');
+  const token = useSelector((state) => (state.user.token));
   const onChangeId = (e) => {
     setId(() => (e.target.value));
   };
@@ -35,6 +37,7 @@ const Form = ({ url, title }) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
         },
         body: `{"id":"${id}","name":"${name}"}`,
       });

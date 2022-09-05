@@ -7,9 +7,10 @@ import Message from '../utilities/message';
 
 const Grades = ({ type, id, name }) => {
   const gradesList = useSelector((state) => (state.grades.grades));
+  const token = useSelector((state) => (state.user.token));
   const fetching = useSelector((state) => (state.grades.fetching));
   const dispatch = useDispatch();
-  useEffect(() => { dispatch(getGradesList(type, id)); }, []);
+  useEffect(() => { dispatch(getGradesList(type, id, token)); }, []);
   return (
     <>
       {!fetching && gradesList.length > 0 && (

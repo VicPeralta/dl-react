@@ -5,7 +5,7 @@ import logo from '../../assets/school.png';
 const links = [
   {
     id: 1,
-    path: '/',
+    path: '/students',
     text: 'Students',
   },
   {
@@ -23,27 +23,34 @@ const links = [
     path: '/maintenance',
     text: 'Maintenance',
   },
+  {
+    id: 5,
+    path: '/logout',
+    text: 'Logout',
+  },
 ];
 
 const NavBar = () => (
-  <nav className="flex align-center p-1 m-1 shadow-1 space-around">
-    <div className="header flex gap-2">
-      <img src={logo} alt="school logo" />
-      <h1 className="margin-0 font-size-3">School grade system</h1>
-    </div>
-    <div className="navlinks flex">
-      {
-      links.map((link) => (
-        <NavLink
-          key={link.id}
-          to={link.path}
-        >
-          {link.text}
-        </NavLink>
-      ))
-    }
-    </div>
-  </nav>
+  <header>
+    <nav className="flex align-center p-1 m-1 shadow-1 space-around">
+      <div className="header flex gap-2">
+        <img src={logo} alt="school logo" />
+        <h1 className="margin-0 font-size-3">School grade system</h1>
+      </div>
+      <div className="navlinks flex">
+        {
+          links.map((link) => (
+            <NavLink
+              key={link.id}
+              to={link.path}
+            >
+              {link.text}
+            </NavLink>
+          ))
+        }
+      </div>
+    </nav>
+  </header>
 );
 
 export default NavBar;

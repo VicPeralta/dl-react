@@ -6,9 +6,10 @@ import Message from '../utilities/message';
 
 const Courses = () => {
   const coursesList = useSelector((state) => (state.courses.courses));
+  const token = useSelector((state) => (state.user.token));
   const fetching = useSelector((state) => (state.courses.fetching));
   const dispatch = useDispatch();
-  useEffect(() => { dispatch(getCoursesList()); }, []);
+  useEffect(() => { dispatch(getCoursesList(token)); }, []);
   return (
     <>
       {!fetching && coursesList.length > 0 && (
