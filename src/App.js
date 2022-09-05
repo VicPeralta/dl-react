@@ -1,25 +1,42 @@
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import AppRoutes from './components/utilities/appRoutes';
 import NavBar from './components/navbar/navbar';
-import StudentPage from './pages/students';
-import CoursesPage from './pages/courses';
-import GradesPage from './pages/grades';
-import MaintenancePage from './pages/maintenance';
+import getUserFromStorage from './services/getUser';
+import { setUser } from './app/userSlice';
+import SignIn from './pages/signIn';
 import './App.css';
 
 function App() {
+  let user = getUserFromStorage();
+  const dispatch = useDispatch();
+  const [logged, setLogged] = useState(!(user === null));
+  if (user) {
+    dispatch(setUser(user));
+  }
+  const loginSuccessful = () => {
+    setLogged(true);
+    user = getUserFromStorage();
+  };
   return (
-    <div className="App">
-      <header>
-        <NavBar />
-      </header>
-      <Routes>
-        <Route path="/" element={<StudentPage />} />
-        <Route path="/courses" element={<CoursesPage />} />
-        <Route path="/grades" element={<GradesPage />} />
-        <Route path="/maintenance" element={<MaintenancePage />} />
-      </Routes>
-    </div>
+    <>
+      {logged && user ? (
+        <>
+          <Router>
+            <NavBar />
+            <AppRoutes />
+          </Router>
+        </>
+      )
+        : (
+          <>
+            <Router>
+              <SignIn onSuccess={loginSuccessful} />
+            </Router>
+          </>
+        )}
+    </>
   );
 }
 
