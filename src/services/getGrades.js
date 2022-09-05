@@ -9,6 +9,7 @@ function getGradesList(type, id) {
     let url = '';
     switch (type) {
       case 'student':
+        if (!id) return;
         url = `${STUDENT_URL}${id}`;
         break;
       case 'courses':

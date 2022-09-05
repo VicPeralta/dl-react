@@ -25,9 +25,13 @@ const Grades = ({ type, id, name }) => {
   );
 };
 
+Grades.defaultProps = {
+  id: '0',
+  name: '',
+};
 Grades.propTypes = {
   type: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
+  id: PropTypes.string,
+  name: PropTypes.string,
 };
 export default Grades;
