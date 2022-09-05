@@ -5,7 +5,7 @@ import AppRoutes from './components/utilities/appRoutes';
 import NavBar from './components/navbar/navbar';
 import getUserFromStorage from './services/getUser';
 import { setUser } from './app/userSlice';
-import SignIn from './pages/signIn';
+import LogIn from './pages/logIn';
 import './App.css';
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
         : (
           <>
             <Router>
-              <SignIn onSuccess={loginSuccessful} />
+              <LogIn onSuccess={loginSuccessful} />
             </Router>
           </>
         )}

@@ -1,6 +1,7 @@
-import './navbar.css';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import logo from '../../assets/school.png';
+import './navbar.css';
 
 const links = [
   {
@@ -30,27 +31,33 @@ const links = [
   },
 ];
 
-const NavBar = () => (
-  <header>
-    <nav className="flex align-center p-1 m-1 shadow-1 space-around">
-      <div className="header flex gap-2">
-        <img src={logo} alt="school logo" />
-        <h1 className="margin-0 font-size-3">School grade system</h1>
-      </div>
-      <div className="navlinks flex">
-        {
-          links.map((link) => (
-            <NavLink
-              key={link.id}
-              to={link.path}
-            >
-              {link.text}
-            </NavLink>
-          ))
-        }
-      </div>
-    </nav>
-  </header>
-);
+const NavBar = () => {
+  const user = useSelector((state) => (state.user.id));
+  return (
+    <header>
+      <nav className="flex align-center p-1 m-1 shadow-1 space-around">
+        <div className="header flex gap-2">
+          <img src={logo} alt="school logo" />
+          <h1 className="margin-0 font-size-3">School grade system</h1>
+        </div>
+        <div className="navlinks flex">
+          {
+            links.map((link) => (
+              <NavLink
+                key={link.id}
+                to={link.path}
+              >
+                {link.text}
+              </NavLink>
+            ))
+          }
+        </div>
+      </nav>
+      <p>
+        {`Welcome ${user}`}
+      </p>
+    </header>
+  );
+};
 
 export default NavBar;

@@ -5,10 +5,24 @@ import MessageBadge from '../components/utilities/messageBadge';
 import { loginBegin, loginSuccess, loginError } from '../app/userSlice';
 import { saveUserToStorage } from '../services/getUser';
 
-const SignIn = ({ onSuccess }) => {
+const LogIn = ({ onSuccess }) => {
+  const logSig = [
+    {
+      title: 'Login',
+      url: 'http://127.0.0.1:3001/user',
+      button: 'Register',
+    },
+    {
+      title: 'SignUp',
+      url: 'http://127.0.0.1:3001/user/add',
+      button: 'Log In',
+    },
+  ];
   const dispatch = useDispatch();
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
+  const [currentForm] = useState(logSig);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [type, setType] = useState('info');
   const [message, setMessage] = useState('');
   const showError = (message) => {
@@ -26,13 +40,17 @@ const SignIn = ({ onSuccess }) => {
       setMessage('');
     }, 2000);
   };
-
+  const onBtn = () => {
+    setCurrentIndex((prev) => {
+      if (prev === 0) return 1;
+      return 0;
+    });
+  };
   const onLogin = async (e) => {
-    const url = 'http://127.0.0.1:3001/user';
     e.preventDefault();
     try {
       dispatch(loginBegin());
-      const response = await fetch(url, {
+      const response = await fetch(currentForm[currentIndex].url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -40,7 +58,10 @@ const SignIn = ({ onSuccess }) => {
         body: `{"id":"${id}","password":"${password}"}`,
       });
       if (response.status === 401) {
-        showError('Invalid credentials');
+        if (currentIndex === 0) showError('Invalid credentials');
+        else {
+          showError('Id already taken');
+        }
         dispatch(loginError);
       } else {
         const json = await response.json();
@@ -65,7 +86,7 @@ const SignIn = ({ onSuccess }) => {
   return (
     <div className="container">
       <h1 className="text-centered">
-        Sign In
+        {currentForm[currentIndex].title}
       </h1>
       <form onSubmit={onLogin} className="flex column m-t-4-auto w-30">
         <div className="field">
@@ -99,10 +120,17 @@ const SignIn = ({ onSuccess }) => {
         <input type="submit" value="Submit" className="btn" />
       </form>
       <MessageBadge message={message} type={type} />
+      <div className="container flex justify-center">
+        <button type="button" onClick={onBtn} className="btn">
+          {currentForm[currentIndex].button}
+        </button>
+      </div>
     </div>
   );
 };
-SignIn.propTypes = {
+
+LogIn.propTypes = {
   onSuccess: PropTypes.func.isRequired,
 };
-export default SignIn;
+
+export default LogIn;
