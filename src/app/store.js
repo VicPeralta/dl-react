@@ -3,6 +3,7 @@ import studentsReducer from './studentsSlice';
 import coursesReducer from './coursesSlice';
 import gradesReducer from './gradesSlice';
 import userReducer from './userSlice';
+import appConfigReducer from './appConfigSlice';
 
 const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
     courses: coursesReducer,
     grades: gradesReducer,
     user: userReducer,
+    appConfig: appConfigReducer,
   },
 });
 
