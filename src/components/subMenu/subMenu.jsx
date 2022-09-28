@@ -13,11 +13,7 @@ function SubMenu({ children }) {
   );
 }
 
-SubMenu.defaultProps = {
-  children: [],
-};
-
 SubMenu.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.node.isRequired,
 };
 export default SubMenu;
