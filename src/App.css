@@ -63,6 +63,10 @@
   color: white;
 }
 
+.green {
+  color: green;
+}
+
 .badge {
   max-width: 360px;
   border-radius: 8px;
@@ -88,6 +92,10 @@
 
 .p-1 {
   padding: 10px;
+}
+
+.m-0 {
+  margin: 0;
 }
 
 .m-1 {
