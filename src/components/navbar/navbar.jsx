@@ -28,16 +28,16 @@ const NavBar = () => {
             </span>
           </p>
           <div className="navlinks flex">
-            <NavLink to="/students">Students</NavLink>
-            <NavLink to="/courses">Courses</NavLink>
-            <NavLink to="/grades">Grades</NavLink>
-            <SubMenu>
+            <NavLink className="link" to="/students">Students</NavLink>
+            <NavLink className="link" to="/courses">Courses</NavLink>
+            <NavLink className="link" to="/grades">Grades</NavLink>
+            <SubMenu className="link p-7">
               <button type="button" data-id="students" onClick={navigateTo}>Students</button>
               <button type="button" data-id="courses" onClick={navigateTo}>Courses</button>
               <button type="button" data-id="grades" onClick={navigateTo}>Grades</button>
               <button type="button" data-id="enroll" onClick={navigateTo}>Enroll</button>
             </SubMenu>
-            <NavLink to="/logout">Logout</NavLink>
+            <NavLink className="link" to="/logout">Logout</NavLink>
           </div>
         </div>
       </nav>

@@ -21,6 +21,7 @@ nav img {
 .navlinks a {
   text-decoration: none;
   color: blue;
+  padding: 5px;
 }
 
 .navlinks a:last-child {
@@ -30,4 +31,10 @@ nav img {
 
 .navlinks a.active {
   text-decoration: underline;
+}
+
+.link:hover {
+  background-color: blueviolet;
+  color: white;
+  border-radius: 8px;
 }
