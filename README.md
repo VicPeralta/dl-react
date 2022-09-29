@@ -1,46 +1,57 @@
-# Getting Started with Create React App and Redux
+# School-Grade System
+> An App that lets you manage catalogs of students, courses, and grades
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+## Built With   
+- React / Redux
+- Ruby / Rails
+- HTML/CSS/JS
 
-## Available Scripts
+## Prerequisites  
+- Node (14 or newer)
+- React (18 or newer)
+- Redux/toolkit (1.8.5 or newer)
+- React-router (6.3 or newer)
+- Reactjs-popup (2.0 or newer)
+- PostgreSql   
+- Ruby (2.7 or newer)
+- Bundle (2.1.4 or newer)
 
-In the project directory, you can run:
+## Getting Started
 
-### `npm start`
+To get a local copy follow these simple steps.  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1.- Open the terminal window and clone the repository using this command:  
+`git clone git@github.com:VicPeralta/dl-react.git` 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2.- Change the directory to the blogapp directory  
+`cd dl-react`  
+3.- Install the project's dependencies by running this command:   
+`npm install`  
+4.- Start the server using this command:  
+`npm start`   
 
-### `npm test`
+![](./school.gif)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Server repo
 
-### `npm run build`
+https://github.com/VicPeralta/dl-rails
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Authors
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+👤 **Victor Peralta**
+- GitHub: [@VicPeralta](https://github.com/VicPeralta)
+- Twitter: [@VicPeralta](https://twitter.com/VicPeralta)
+- Linkedin: [@VicPeralta](https://www.linkedin.com/in/vicperalta/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🤝 Contributing
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Contributions, issues, and feature requests are welcome!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Feel free to check the [issues page](../../issues/).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Show your support
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Give a ⭐️ if you like this project!
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).

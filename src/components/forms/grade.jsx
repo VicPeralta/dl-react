@@ -116,22 +116,26 @@ const GradeForm = () => {
               }
             </select>
           </label>
-          <label htmlFor="q1">
-            Q1
-            <input type="number" id="q1" min={0} max={10} value={course.q1 || ''} onChange={onQuarter} />
-          </label>
-          <label htmlFor="q2">
-            Q2
-            <input type="number" id="q2" min={0} max={10} value={course.q2 || ''} onChange={onQuarter} />
-          </label>
-          <label htmlFor="q3">
-            Q3
-            <input type="number" id="q3" min={0} max={10} value={course.q3 || ''} onChange={onQuarter} />
-          </label>
-          <label htmlFor="q4">
-            Q4
-            <input type="number" id="q4" min={0} max={10} value={course?.q4 || ''} onChange={onQuarter} />
-          </label>
+          <div className="flex space-around text-centered">
+            <label htmlFor="q1">
+              Q1
+              <input type="number" id="q1" min={0} max={10} value={course.q1 || ''} onChange={onQuarter} />
+            </label>
+            <label htmlFor="q2">
+              Q2
+              <input type="number" id="q2" min={0} max={10} value={course.q2 || ''} onChange={onQuarter} />
+            </label>
+          </div>
+          <div className="flex space-around text-centered">
+            <label htmlFor="q3">
+              Q3
+              <input type="number" id="q3" className="px-10-0" min={0} max={10} value={course.q3 || ''} onChange={onQuarter} />
+            </label>
+            <label htmlFor="q4">
+              Q4
+              <input type="number" id="q4" min={0} max={10} value={course?.q4 || ''} onChange={onQuarter} />
+            </label>
+          </div>
         </div>
         <input type="submit" value="Update grades" className="btn" />
       </form>

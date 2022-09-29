@@ -110,12 +110,20 @@
   justify-content: space-around;
 }
 
+.space-between {
+  justify-content: space-between;
+}
+
 .m-t-4-auto {
   margin: 40px auto;
 }
 
 .px-1 {
   padding-inline: 10px;
+}
+
+.px-10-0 {
+  padding: 10px 0;
 }
 
 .font-bold {
@@ -128,6 +136,10 @@
 
 .w-80 {
   width: 80%;
+}
+
+.w-20 {
+  width: 20%;
 }
 
 .w-30 {

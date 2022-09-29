@@ -66,6 +66,7 @@ const Enroll = () => {
       <form className="flex column m-t-4-auto w-30" onSubmit={onEnroll}>
         <div className="field">
           <label htmlFor="student">
+            Select student to enroll
             <select id="student" value={student} onChange={onStudent}>
               {
                 studentsList.map((student) => (
@@ -79,6 +80,7 @@ const Enroll = () => {
             </select>
           </label>
           <label htmlFor="course">
+            Select course
             <select id="course" value={course} onChange={onCourse}>
               {
                 coursesList.map((course) => (
