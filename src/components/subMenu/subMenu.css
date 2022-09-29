@@ -1,0 +1,46 @@
+.dropdown {
+  margin: 10px;
+  position: relative;
+  background-color: white;
+}
+
+.dropdown-options {
+  position: absolute;
+  left: 5px;
+  top: 30px;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 3px 3px 3px cadetblue;
+}
+
+.link {
+  border: none;
+  background-color: white;
+  text-decoration: none;
+  color: blue;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.dropdown > .link:focus + .dropdown-options {
+  opacity: 1;
+  background-color: inherit;
+}
+
+.dropdown-options > * {
+  text-decoration: none;
+  border: none;
+  background-color: white;
+  color: blue;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.dropdown-options > *:hover {
+  background-color: blueviolet;
+  color: white;
+}
