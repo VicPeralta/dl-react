@@ -3,7 +3,7 @@ import Popup from 'reactjs-popup';
 import Grades from '../grades/grades';
 
 const CourseCard = ({ id, name }) => (
-  <div className="flex border-gray p-1 w-100 align-center">
+  <div className="flex border-gray p-1 w-100 align-center flex-wrap">
     <p className="flex-1">
       {id}
     </p>

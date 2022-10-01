@@ -3,6 +3,10 @@
   display: flex;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .column {
   flex-direction: column;
 }
@@ -162,7 +166,7 @@
   height: 80vh;
 }
 
-.container {
+.container, .wide-container {
   width: 90%;
   margin-inline: auto;
 }
@@ -211,4 +215,16 @@ select {
   width: fit-content;
   margin-inline: auto;
   display: block;
+}
+
+@media screen and (max-width: 360px) {
+  .container {
+    width: 90%;
+    margin-inline: 5px;
+  }
+
+  .wide-container {
+    min-width: 700px;
+    overflow-y: scroll;
+  }
 }

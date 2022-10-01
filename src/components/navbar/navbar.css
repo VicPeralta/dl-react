@@ -10,7 +10,7 @@ nav {
 }
 
 nav img {
-  width: 50px;
+  width: 100px;
 }
 
 .navlinks {
@@ -43,10 +43,15 @@ nav img {
   nav {
     flex-direction: column;
   }
+
   .navlinks {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+  }
+
+  nav img {
+    width: 50px;
   }
 }
