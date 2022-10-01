@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import getStudentsList from '../../services/getStudents';
 import getGradesList from '../../services/getGrades';
-import MessageBadge from '../utilities/messageBadge';
+import MessageBadge from '../messageBadge/messageBadge';
 
 const GradeForm = () => {
   const studentsList = useSelector((state) => (state.students.students));
