@@ -150,6 +150,10 @@
   width: 90vw;
 }
 
+.w-100px {
+  width: 100px;
+}
+
 .h-80 {
   height: 80%;
 }
