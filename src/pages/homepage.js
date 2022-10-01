@@ -18,7 +18,7 @@ function Homepage({ loginSuccessful }) {
     <>
       <div className="text-centered">
         <h1 className="sm-1">Welcome to School grading system</h1>
-        <img src={logo} alt="School logo" className="w-100px sm-img" />
+        <img src={logo} alt="School logo" className="log-img" />
       </div>
       {loginForm && (<LogIn onSuccess={handleLogin} />)}
       {!loginForm && (<SignUp onSuccess={handleLogin} />)}

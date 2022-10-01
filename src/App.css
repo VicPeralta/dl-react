@@ -35,6 +35,10 @@
   margin: 0;
 }
 
+.margin-bottom-0 {
+  margin-bottom: 0;
+}
+
 .font-size-2 {
   font-size: 2rem;
 }
@@ -76,6 +80,17 @@
   border-radius: 8px;
   margin: 20px auto;
   text-align: center;
+}
+
+.close-btn {
+  margin: 10px 10px 0 10px;
+  font-size: 1.5rem;
+  border-radius: 8px;
+  border: none;
+  background-color: dodgerblue;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
 }
 
 .shadow-1 {
@@ -217,7 +232,7 @@ select {
   display: block;
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 500px) {
   .container {
     width: 90%;
     margin-inline: 5px;

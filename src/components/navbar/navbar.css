@@ -21,7 +21,7 @@ nav img {
 .navlinks a {
   text-decoration: none;
   color: blue;
-  padding: 5px;
+  padding: 9px;
 }
 
 .navlinks a:last-child {
@@ -37,9 +37,10 @@ nav img {
   background-color: blueviolet;
   color: white;
   border-radius: 8px;
+  padding: 9px;
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 500px) {
   nav {
     flex-direction: column;
   }

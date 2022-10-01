@@ -1,6 +1,9 @@
+.log-img {
+  width: 100px;
+}
 
-@media screen and (max-width: 360px) {
-  .sm-img {
+@media screen and (max-width: 500px) {
+  .log-img {
     width: 70px;
   }
 }
