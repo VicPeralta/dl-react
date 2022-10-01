@@ -38,3 +38,15 @@ nav img {
   color: white;
   border-radius: 8px;
 }
+
+@media screen and (max-width: 360px) {
+  nav {
+    flex-direction: column;
+  }
+  .navlinks {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}

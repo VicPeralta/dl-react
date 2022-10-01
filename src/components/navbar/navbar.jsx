@@ -18,7 +18,7 @@ const NavBar = () => {
       <nav className="flex align-center p-1 m-1 shadow-1 space-around">
         <div className="header flex gap-2">
           <img src={logo} alt="school logo" />
-          <h1 className="margin-0 font-size-3">School grade system</h1>
+          <h1 className="margin-0 sm-1">School grade system</h1>
         </div>
         <div>
           <p className="m-0">

@@ -86,7 +86,7 @@ const GradeForm = () => {
       <h1 className="text-centered">
         Grading
       </h1>
-      <form className="flex column m-t-4-auto w-30" onSubmit={onGrade}>
+      <form className="form-login" onSubmit={onGrade}>
         <div className="field">
           <label htmlFor="student">
             Student

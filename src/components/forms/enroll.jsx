@@ -63,7 +63,7 @@ const Enroll = () => {
   return (
     <>
       <h1 className="text-centered">Enroll</h1>
-      <form className="flex column m-t-4-auto w-30" onSubmit={onEnroll}>
+      <form className="form-login" onSubmit={onEnroll}>
         <div className="field">
           <label htmlFor="student">
             Select student to enroll

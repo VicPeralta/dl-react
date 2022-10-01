@@ -59,7 +59,7 @@ const Form = ({ url, title }) => {
         <span>  </span>
         {title}
       </h1>
-      <form onSubmit={onSubmit} className="flex column m-t-4-auto w-30">
+      <form onSubmit={onSubmit} className="form-login">
         <div className="field">
           <label htmlFor="Id">
             {`${title}-Id:`}
