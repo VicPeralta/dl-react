@@ -125,6 +125,14 @@
   margin: 10px;
 }
 
+.ml-10 {
+  margin-left: 10px;
+}
+
+.ml-20 {
+  margin-left: 20px;
+}
+
 .space-around {
   justify-content: space-around;
 }
@@ -181,7 +189,8 @@
   height: 80vh;
 }
 
-.container, .wide-container {
+.container,
+.wide-container {
   width: 90%;
   margin-inline: auto;
 }
