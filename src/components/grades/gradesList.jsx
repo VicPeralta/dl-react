@@ -4,7 +4,7 @@ import GradeCard from './gradeCard';
 const GradesList = ({
   grades, id, name, type,
 }) => (
-  <div className="container w-100">
+  <div className="wide-container p-1">
     <h1>
       {name}
     </h1>

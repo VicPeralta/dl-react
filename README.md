@@ -30,6 +30,7 @@ To get a local copy follow these simple steps.
 4.- Start the server using this command:  
 `npm start`   
 
+![](./schoolMobile.gif)
 ![](./school.gif)
 
 ## Server repo

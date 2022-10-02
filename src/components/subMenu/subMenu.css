@@ -22,6 +22,7 @@
   font-size: 1rem;
   cursor: pointer;
   padding: 0;
+  padding: 9px;
 }
 
 .dropdown > .link:focus + .dropdown-options {

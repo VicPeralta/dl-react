@@ -3,7 +3,7 @@ import Popup from 'reactjs-popup';
 import Grades from '../grades/grades';
 
 const CourseCard = ({ id, name }) => (
-  <div className="flex border-gray p-1 w-100 align-center">
+  <div className="flex border-gray p-1 w-100 align-center flex-wrap">
     <p className="flex-1">
       {id}
     </p>
@@ -18,7 +18,7 @@ const CourseCard = ({ id, name }) => (
       >
         {(close) => (
           <div className="modal bg-white h-80vh w-90vw shadow-2 scroll">
-            <button className="fixed btn font-size-2 border-gray m-1" onClick={close} type="button">
+            <button className="close-btn" onClick={close} type="button">
               &times;
             </button>
             <Grades type="courses" id={id} name={name} />

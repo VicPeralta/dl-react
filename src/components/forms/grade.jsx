@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import getStudentsList from '../../services/getStudents';
 import getGradesList from '../../services/getGrades';
-import MessageBadge from '../utilities/messageBadge';
+import MessageBadge from '../messageBadge/messageBadge';
 
 const GradeForm = () => {
   const studentsList = useSelector((state) => (state.students.students));
@@ -86,7 +86,7 @@ const GradeForm = () => {
       <h1 className="text-centered">
         Grading
       </h1>
-      <form className="flex column m-t-4-auto w-30" onSubmit={onGrade}>
+      <form className="form-login" onSubmit={onGrade}>
         <div className="field">
           <label htmlFor="student">
             Student

@@ -3,9 +3,9 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import AppRoutes from './components/utilities/appRoutes';
 import NavBar from './components/navbar/navbar';
+import Homepage from './pages/homepage';
 import getUserFromStorage from './services/getUser';
 import { setUser } from './app/userSlice';
-import LogIn from './pages/logIn';
 import './App.css';
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
         : (
           <>
             <Router>
-              <LogIn onSuccess={loginSuccessful} />
+              <Homepage loginSuccessful={loginSuccessful} />
             </Router>
           </>
         )}
